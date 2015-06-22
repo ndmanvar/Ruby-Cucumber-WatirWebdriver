@@ -1,6 +1,6 @@
 source "https://www.rubygems.org"
 
-gem 'cucumber'
+gem 'cucumber', '>=2.0.0'
 gem 'rspec'
 gem 'watir-webdriver'
 gem 'parallel_tests'
