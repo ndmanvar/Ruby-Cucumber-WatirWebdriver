@@ -12,12 +12,15 @@ end
 @browser = nil
 
 Before do | scenario |
-	# need to configure env variables for browser
+  @version = ENV['version']
+  @browserName = ENV['browserName']
+  @platform = ENV['platform']
+
   capabilities_config = {
-    :version => "#{ENV['version']}",
-    :browserName => "#{ENV['browserName']}",
-    :platform => "#{ENV['platform']}",
-    :name => "#{scenario.feature.name} - #{scenario.name} - #{ENV['platform']} - #{ENV['browserName']} - #{ENV['version']}"
+    :version => @version,
+    :browserName => @browserName,
+    :platform => @platform,
+    :name => "#{scenario.feature.name} - #{scenario.name} - #{@platform} - #{@browserName} - #{@version}"
   }
 
   url = "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub".strip
@@ -27,7 +30,7 @@ end
 # "after all"
 After do | scenario |
   sessionid = @browser.driver.send(:bridge).session_id
-  jobname = "#{scenario.feature.name} - #{scenario.name} - #{ENV['platform']} - #{ENV['browserName']} - #{ENV['version']}"
+  jobname = "#{scenario.feature.name} - #{scenario.name} - #{@platform} - #{@browserName} - #{@version}"
   puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
 
   @browser.close
