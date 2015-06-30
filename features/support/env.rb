@@ -17,7 +17,7 @@ Before do | scenario |
     :version => "#{ENV['version']}",
     :browserName => "#{ENV['browserName']}",
     :platform => "#{ENV['platform']}",
-    :name => "#{scenario.feature.name} - #{scenario.name}"
+    :name => "#{scenario.feature.name} - #{scenario.name} - #{ENV['platform']} - #{ENV['browserName']} - #{ENV['version']}"
   }
 
   url = "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub".strip
