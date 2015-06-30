@@ -1,12 +1,17 @@
-Given 'I am on the Google search page' do
-  @browser.goto 'http://www.google.com/'
+Given 'I am on the whole foods homepage' do
+  @browser.goto 'http://www.wholefoodsmarket.com/'
 end
 
-When /I search for "(.*)"/ do |query|
-  page = GoogleHomePage.new @browser
-  page.searchBox.when_present.set query
+Then 'I should see the toolbar' do
+  page = Homepage.new @browser
+  page.toolbar.wait_until_present
 end
 
-Then /I should see/ do |text|
-  Watir::Wait.until { @browser.text =~ /#{text}/m }
+Then 'I should see the "Get Fired Up" homepage image' do
+  page = Homepage.new @browser
+  page.getFiredUpImg.wait_until_present
+end
+
+Then /^the title of the browser tab should be "(.*)"$/ do | title |
+  Watir::Wait.until { @browser.title == title }
 end
