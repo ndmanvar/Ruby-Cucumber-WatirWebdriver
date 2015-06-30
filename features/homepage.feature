@@ -1,6 +1,6 @@
 Feature: Homepage
 
-  Scenario: Find what I'm looking for 1
+  Scenario: Verify Homepage UI
     Given I am on the whole foods homepage
     Then I should see the toolbar
     Then I should see the "Get Fired Up" homepage image
