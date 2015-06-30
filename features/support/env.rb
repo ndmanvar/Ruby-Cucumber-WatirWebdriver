@@ -27,7 +27,7 @@ end
 # "after all"
 After do | scenario |
   sessionid = @browser.driver.send(:bridge).session_id
-  jobname = "#{scenario.feature.name} - #{scenario.name} - #{ENV['platform']} - #{ENV['browserName']} - #{ENV['version']}"
+  jobname = "#{scenario.feature.name} - #{scenario.name}"
   puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
 
   @browser.close
