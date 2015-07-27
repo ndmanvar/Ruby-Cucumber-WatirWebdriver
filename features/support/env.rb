@@ -2,6 +2,7 @@ begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations
 require 'watir-webdriver'
 require 'page-object'
 require 'require_all'
+require 'sauce_whisk'
 
 begin
   require_all "#{File.join(File.expand_path(File.dirname(__FILE__)), '..', 'page_objects')}"
@@ -34,4 +35,10 @@ After do | scenario |
   puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
 
   @browser.close
+
+  if scenario.passed?
+    SauceWhisk::Jobs.pass_job sessionid
+  else
+    SauceWhisk::Jobs.fail_job sessionid
+  end
 end
