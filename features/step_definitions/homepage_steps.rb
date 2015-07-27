@@ -1,5 +1,6 @@
 Given 'I am on the Sprint homepage' do
   @browser.goto 'http://www.sprint.com/'
+  @browser.alert.close if @browser.alert.exists?
 end
 
 Then /^the title of the page should be "(.*)"$/ do | title |
@@ -21,3 +22,6 @@ Then 'I should see the best deals in data section' do
   page.bestDeals.wait_until_present
 end
 
+And 'I click on the menu button in the left corner' do
+	@browser.element(:class => 'sprint-rail-menu__hamburger').when_present.click
+end

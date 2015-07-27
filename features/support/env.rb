@@ -16,16 +16,22 @@ Before do | scenario |
   @version = ENV['version']
   @browserName = ENV['browserName']
   @platform = ENV['platform']
+  @deviceName = ENV['deviceName']
 
   capabilities_config = {
     :version => @version,
     :browserName => @browserName,
-    :platform => @platform,
-    :name => "#{scenario.feature.name} - #{scenario.name} - #{@platform} - #{@browserName} - #{@version}"
+    :platform => @platform || "",
+    :deviceName => @deviceName,
+    :deviceOrientation => "portrait",
+    :name => "#{scenario.feature.name} - #{scenario.name} - #{@platform} - #{@deviceName} - #{@version}"
   }
 
   url = "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub".strip
-  @browser = Watir::Browser.new(:remote, :url => url, :desired_capabilities => capabilities_config)
+
+  client = Selenium::WebDriver::Remote::Http::Default.new
+  client.timeout = 180
+  @browser = Watir::Browser.new(:remote, :url => url, :desired_capabilities => capabilities_config, :http_client => client)
 end
 
 # "after all"

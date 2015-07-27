@@ -7,6 +7,5 @@ Feature: Sprint Homepage
     Given I am on the Sprint homepage
     Then the title of the page should be "Cell Phones, Mobile Phones & Wireless Calling Plans from Sprint"
     Then I should see the all in homepage image
-    Then I should see the left rail toolbar
     Then I should see the best deals in data section
 

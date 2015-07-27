@@ -14,7 +14,9 @@ class LeftRailToolbar
   end
 
   def myAccount
-  	@browser.element(:xpath => "//a[contains(@id, '-account') and contains(text(), 'My account')]")
+  	# @browser.element(:css => "a#tl_desktop_not-signed-my-account")
+    # @browser.element(:xpath => "//*[@id='tl_desktop_not-signed-my-account' and text()='My account']")
+    @browser.element(:css => ".sprint-rail-menu__blade ul li")
   end
 
 end

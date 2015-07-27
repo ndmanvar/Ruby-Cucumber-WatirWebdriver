@@ -3,9 +3,9 @@ And /^I fill out the "(.*)" field with "(.*)" on the My Sprint Login page$/ do |
 
   case fieldName.downcase
   when 'username'
-  	page.username.when_present.set text
+  	page.username.set text
   when 'password'
-  	page.password.when_present.set text
+  	page.password.set text
   else
   	raise "error: invalid argument"
   end
