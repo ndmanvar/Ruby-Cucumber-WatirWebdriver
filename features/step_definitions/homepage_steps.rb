@@ -1,5 +1,5 @@
 Given 'I am on the Sprint homepage' do
-  @browser.goto 'http://www.sprint.com/'
+  @browser.goto 'http://www.sprint.com/?adobeQA=lowerD'
 end
 
 Then /^the title of the page should be "(.*)"$/ do | title |

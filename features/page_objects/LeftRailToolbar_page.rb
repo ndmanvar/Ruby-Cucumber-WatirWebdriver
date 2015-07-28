@@ -17,4 +17,12 @@ class LeftRailToolbar
   	@browser.element(:xpath => "//a[contains(@id, '-account') and contains(text(), 'My account')]")
   end
 
+  def shop
+    @browser.element(:id => 'tl-menu-shop')
+  end
+
+  def phones
+    @browser.element(:xpath => "//a[@id='tl_desktop_phones' and contains(text(), 'Phones')]")
+  end
+
 end
