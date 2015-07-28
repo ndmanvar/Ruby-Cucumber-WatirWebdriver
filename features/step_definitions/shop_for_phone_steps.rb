@@ -4,7 +4,7 @@ And /^I click on the "(.*)" phone$/ do | phoneName |
 end
 
 And 'I dismiss the feedback link if it is present' do
-	sleep 5
+	sleep 8
 	element = @browser.element(:xpath => "//img[contains(@src, 'bwc_close')]")
 	element.click if element.present?
 end
