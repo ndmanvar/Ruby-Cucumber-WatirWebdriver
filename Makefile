@@ -1,7 +1,7 @@
 JUNIT_DIR?=junit_reports
 
 run_all_in_parallel:
-	make -j XP_chrome_43 Windows7_firefox_33 OSX10.10_safari_8 Windows10_internet_explorer_11 Windows8_internet_explorer_10 Windows7_internet_explorer_9
+	make -j XP_chrome_43 Windows7_firefox_33 OSX10.10_safari_8 Windows10_internet_explorer_11 Windows8_internet_explorer_10
 
 OSX10.10_safari_8:
 	platform="OS X 10.10" browserName=safari version=8 \
