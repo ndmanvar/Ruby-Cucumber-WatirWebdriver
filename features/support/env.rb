@@ -2,6 +2,7 @@ begin require 'rspec/expectations'; rescue LoadError; require 'spec/expectations
 require 'watir-webdriver'
 require 'page-object'
 require 'require_all'
+require 'sauce_whisk'
 
 begin
   require_all "#{File.join(File.expand_path(File.dirname(__FILE__)), '..', 'page_objects')}"
@@ -24,7 +25,10 @@ Before do | scenario |
   }
 
   url = "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub".strip
-  @browser = Watir::Browser.new(:remote, :url => url, :desired_capabilities => capabilities_config)
+
+  client = Selenium::WebDriver::Remote::Http::Default.new
+  client.timeout = 180
+  @browser = Watir::Browser.new(:remote, :url => url, :desired_capabilities => capabilities_config, :http_client => client)
 end
 
 # "after all"
@@ -34,4 +38,10 @@ After do | scenario |
   puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
 
   @browser.close
+
+  if scenario.passed?
+    SauceWhisk::Jobs.pass_job sessionid
+  else
+    SauceWhisk::Jobs.fail_job sessionid
+  end
 end
