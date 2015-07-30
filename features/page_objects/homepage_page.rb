@@ -2,7 +2,7 @@ class HomePage
   include PageObject
 
   def toolbar
-  	@browser.element(:class => 'nav-menu')
+  	Toolbar.new(@browser)
   end
 
   def logo
@@ -14,11 +14,11 @@ class HomePage
   end
 
   def twentyPercentOff
-  	@browser.element(:title => 'wshp_072815_banner')
+  	@browser.element(:title => 'wshp-073015-s1')
   end
 
   def endOfSummerSale
-  	@browser.element(:title => 'wshp-072915-s1')
+  	@browser.element(:title => 'wshp_072815_banner')
   end
 
   def signUpSavePopupCloseBtn

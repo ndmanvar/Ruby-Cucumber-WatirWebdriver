@@ -3,7 +3,7 @@ Feature: Williams-Sonoma Homepage
   As an user
   I want to go to WS homepage and verify it loads properly
 
-  Scenario: Find what I'm looking for 2
+  Scenario: Verify Homepage Loads properly
     Given I am on the Williams-Sonoma homepage
     And I dismiss the Sign Up & Save popup if present
     Then the title of the page should be "Cookware, Cooking Utensils, Kitchen Decor & Gourmet Foods | Williams-Sonoma"
