@@ -29,7 +29,7 @@ Windows7_internet_explorer_9:
 		make parallel_cucumber
 
 Windows8_chrome_43:
-	platform='Windows' browserName=chrome version=43 \
+	platform='Windows 8' browserName=chrome version=43 \
 		JUNIT_DIR=junit_reports/test_Windows8_chrome_43 \
 		make parallel_cucumber
 
