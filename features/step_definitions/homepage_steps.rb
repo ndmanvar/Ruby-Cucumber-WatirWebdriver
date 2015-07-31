@@ -25,8 +25,3 @@ Then 'I should see the End of Summer Sale image' do
   page = HomePage.new(@browser)
   page.endOfSummerSale.wait_until_present
 end
-
-Then 'I should see the 20% Off Any One Item image' do
-  page = HomePage.new(@browser)
-  page.twentyPercentOff.wait_until_present
-end

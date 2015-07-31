@@ -13,12 +13,8 @@ class HomePage
   	end
   end
 
-  def twentyPercentOff
-  	@browser.element(:title => 'wshp-073015-s1')
-  end
-
   def endOfSummerSale
-  	@browser.element(:title => 'wshp_072815_banner')
+  	@browser.element(:title => 'wshp-073115-s1')
   end
 
   def signUpSavePopupCloseBtn

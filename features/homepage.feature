@@ -10,6 +10,5 @@ Feature: Williams-Sonoma Homepage
     Then I should see the Williams-Sonoma logo
     Then I should see the homepage toolbar
     Then I should see the End of Summer Sale image
-    Then I should see the 20% Off Any One Item image
 
 # ad_email_btn-close

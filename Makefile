@@ -1,7 +1,7 @@
 JUNIT_DIR?=junit_reports
 
 run_all_in_parallel:
-	make -j XP_chrome_43 Windows7_firefox_33 OSX10.10_safari_8 Windows10_internet_explorer_11 OSX10.11_safari_8.1
+	make -j Windows8_chrome_43 Windows7_firefox_33 OSX10.10_safari_8 Windows10_internet_explorer_11 OSX10.11_safari_8.1
 
 OSX10.10_safari_8:
 	platform="OS X 10.10" browserName=safari version=8 \
@@ -28,9 +28,9 @@ Windows7_internet_explorer_9:
 		JUNIT_DIR=junit_reports/test_Windows7_internet_explorer_9 \
 		make parallel_cucumber
 
-XP_chrome_43:
-	platform=XP browserName=chrome version=43 \
-		JUNIT_DIR=junit_reports/test_XP_chrome_43 \
+Windows8_chrome_43:
+	platform='Windows' browserName=chrome version=43 \
+		JUNIT_DIR=junit_reports/test_Windows8_chrome_43 \
 		make parallel_cucumber
 
 parallel_cucumber:
