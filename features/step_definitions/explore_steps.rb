@@ -3,5 +3,5 @@ And 'I click the explore link from the toolbar' do
 end
 
 Then 'I should see the explore marketing header' do
-	@browser.element(:css => '.explore-marketing-header').wait_until_present
+	@browser.element(:css => '.explore-marketing-header-this-will-fail').wait_until_present
 end
