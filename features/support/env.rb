@@ -4,11 +4,6 @@ require 'page-object'
 require 'require_all'
 require 'sauce_whisk'
 
-begin
-  require_all "#{File.join(File.expand_path(File.dirname(__FILE__)), '..', 'page_objects')}"
-rescue
-  puts "no page objects found"
-end
 
 @browser = nil
 
