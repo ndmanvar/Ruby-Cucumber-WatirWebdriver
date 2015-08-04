@@ -4,5 +4,5 @@ end
 
 
 Then /^the title of the page should be "(.*)"$/ do | titleText |
-  Watir::Wait.until { @browser.title == titleText }
+  expect(@browser.title).to be == titleText
 end
