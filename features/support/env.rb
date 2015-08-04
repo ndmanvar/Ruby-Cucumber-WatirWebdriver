@@ -30,6 +30,8 @@ end
 After do | scenario |
   sessionid = @browser.driver.send(:bridge).session_id
   jobname = "#{scenario.feature.name} - #{scenario.name}"
+
+  # Output sessionId and jobname to std out for Sauce OnDemand Plugin to display embeded results
   puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
 
   @browser.close
