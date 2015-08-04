@@ -33,6 +33,6 @@ content << "parallel_cucumber:\n"
 content << "\t-rm -rf $(JUNIT_DIR)\n"
 content << "\tbundle exec parallel_cucumber features -o \"--format junit --out $(JUNIT_DIR) --format pretty\" -n 20\n"
 
-puts "content is : #{content}"
+puts content
 
 File.write(file_to_write, content)
