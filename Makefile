@@ -1,4 +1,6 @@
 JUNIT_DIR?=junit_reports
+FEATURES_DIR?=features
+SPLIT_FEATUERS_DIR?=split_features
 
 run_all_in_parallel:
 	make -j test_XP_chrome_43 test_Windows7_firefox_33 test_OSX10.10_safari_8
@@ -20,4 +22,8 @@ test_Windows7_firefox_33:
 
 parallel_cucumber:
 	-rm -rf $(JUNIT_DIR)
-	parallel_cucumber features -o "--format junit --out $(JUNIT_DIR) --format pretty" -n 20
+	parallel_cucumber $(FEATURES_DIR) -o "--format junit --out $(JUNIT_DIR) --format pretty" -n 20
+
+split_scenarios:
+	-rm -rf $(SPLIT_FEATUERS_DIR)
+	ruby utils/scenario_splitter.rb $(FEATURES_DIR) $(SPLIT_FEATUERS_DIR)

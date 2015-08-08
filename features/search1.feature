@@ -1,9 +1,17 @@
-Feature: Search
+Feature: Search 1
   In order to learn more
   As an information seeker
   I want to find more information
 
   Scenario: Find what I'm looking for 2
+    Given I am on the Google search page
+    When I search for "cucumber github"
+    Then I should see
+      """
+      GitHub
+      """
+
+  Scenario: Find what I'm looking for 3
     Given I am on the Google search page
     When I search for "cucumber github"
     Then I should see
