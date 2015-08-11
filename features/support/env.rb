@@ -39,9 +39,9 @@ After do | scenario |
 
   @browser.close
 
-  if scenario.passed?
-    SauceWhisk::Jobs.pass_job sessionid
-  else
+  if scenario.failed?
     SauceWhisk::Jobs.fail_job sessionid
+  else
+    SauceWhisk::Jobs.pass_job sessionid
   end
 end
