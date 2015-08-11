@@ -41,11 +41,7 @@ After do | scenario |
 
   puts "scenario.failed is : #{scenario.failed?}"
 
-  if scenario.failed?
-    puts "in failed"
-    SauceWhisk::Jobs.fail_job sessionid
-  else
-    puts "in not failed"
-    SauceWhisk::Jobs.pass_job sessionid
-  end
+  job = SauceWhisk::Jobs.fetch sessionid
+  job.passed = scenario.failed? ? false : true
+  job.save
 end
