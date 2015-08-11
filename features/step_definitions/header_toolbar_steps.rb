@@ -1,4 +1,5 @@
 And /^I type in "(.*)" into the header toolbar$/ do | text |
+	sleep 3
 	page = HeaderToolbar.new(@browser)
 	page.searchBox.when_present.set text
 end
