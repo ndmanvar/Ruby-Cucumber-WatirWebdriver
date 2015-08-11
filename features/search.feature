@@ -8,5 +8,4 @@ Feature: RetailMeNot Search
     And I type in "Amazon" into the header toolbar
     And I click the "amazon.com" intant result suggestion
 
-    Then the title of the page should be "Amazon Promo Codes, Coupons 2015"
     Then the heading text of the promo and coupon view should be "Amazon Promo Codes & Coupons"
