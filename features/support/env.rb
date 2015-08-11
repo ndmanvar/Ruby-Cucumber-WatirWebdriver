@@ -21,7 +21,7 @@ Before do | scenario |
     :version => @version,
     :browserName => @browserName,
     :platform => @platform,
-    :name => "#{scenario.feature.name} - #{scenario.name} - #{@platform} - #{@browserName} - #{@version}"
+    :name => "#{scenario.feature.name} - #{scenario.name}"
   }
 
   url = "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com:80/wd/hub".strip
@@ -34,7 +34,7 @@ end
 # "after all"
 After do | scenario |
   sessionid = @browser.driver.send(:bridge).session_id
-  jobname = "#{scenario.feature.name} - #{scenario.name} - #{@platform} - #{@browserName} - #{@version}"
+  jobname = "#{scenario.feature.name} - #{scenario.name}"
   puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
 
   @browser.close
