@@ -22,7 +22,7 @@ test_Windows7_firefox_33:
 
 parallel_cucumber:
 	-rm -rf $(JUNIT_DIR)
-	parallel_cucumber $(FEATURES_DIR) -o "--format junit --out $(JUNIT_DIR) --format pretty" -n 20
+	bundle exec parallel_cucumber $(FEATURES_DIR) -o "--format junit --out $(JUNIT_DIR) --format pretty" -n 20
 
 split_scenarios:
 	-rm -rf $(SPLIT_FEATUERS_DIR)

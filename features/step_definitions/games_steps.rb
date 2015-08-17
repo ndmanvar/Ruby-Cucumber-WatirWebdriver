@@ -11,7 +11,6 @@ end
 
 Then /^I should see the "(.*)" entry in the game list$/ do | entryName |
 	page = GameList.new(@browser)
-
 	page.entry(entryName).wait_until_present
 end
 
