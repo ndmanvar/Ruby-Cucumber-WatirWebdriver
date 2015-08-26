@@ -2,8 +2,12 @@ JUNIT_DIR?=junit_reports
 FEATURES_DIR?=features
 SPLIT_FEATUERS_DIR?=split_features
 
+
 run_all_in_parallel:
 	make -j test_XP_chrome_43 test_Windows7_firefox_33 test_OSX10.10_safari_8
+
+run_all_in_full_parallel:
+	make split_scenarios && FEATURES_DIR=split_features make run_all_in_parallel
 
 test_XP_chrome_43:
 	platform=XP browserName=chrome version=43 name=test_XP_chrome_43 \
