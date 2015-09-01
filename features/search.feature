@@ -1,12 +1,8 @@
-Feature: Search
-  In order to learn more
-  As an information seeker
-  I want to find more information
-
-  Scenario: Find what I'm looking for 1
-    Given I am on the Google search page
-    When I search for "cucumber github"
-    Then I should see
+Feature: Sauce Labs Homepage
+  
+  Scenario: Verify homepage title
+    Given I am on the Sauce Labs homepage
+    Then the title of the page should be
       """
-      GitHub
+      Sauce Labs: Selenium Testing, Mobile Testing, JS Unit Testing and More
       """
