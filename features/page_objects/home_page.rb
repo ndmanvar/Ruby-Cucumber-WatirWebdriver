@@ -1,8 +1,8 @@
 class HomePage
   include PageObject
 
-  def freeTrialButton
-  	@browser.element(:css => '.button.red[href*=trial]')
+  def locationTextBox
+  	@browser.text_field(:id => 'srchHomeLocation')
   end
 
 end
