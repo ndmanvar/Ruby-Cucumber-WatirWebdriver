@@ -1,8 +1,8 @@
 class HomePage
   include PageObject
 
-  def freeTrialButton
-  	@browser.element(:css => '.button.red[href*=trial]')
+  def businessTab
+  	@browser.element(:css => "a.NavMenuItem[href='/Businesses/Default.aspx']")
   end
 
 end

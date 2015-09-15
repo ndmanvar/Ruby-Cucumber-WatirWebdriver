@@ -1,8 +1,8 @@
-Feature: Sauce Labs Homepage
+Feature: UHG Homepage
   
   Scenario: Verify homepage title
-    Given I am on the Sauce Labs homepage
+    Given I am on the UnitedHealth Group homepage
     Then the title of the page should be
       """
-      Sauce Labs: Selenium Testing, Mobile Testing, JS Unit Testing and More
+      UnitedHealth Group - Health Benefits and Services - Home
       """
