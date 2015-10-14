@@ -11,5 +11,5 @@ install bundler: `gem install bundler  # use sudo if necessary`
 install gems: `bundle install  # use sudo if necessary`
 
 # Running tests
-to run tests: `make run_all_in_parallel`
+to run tests: `rake test_sauce`
 
