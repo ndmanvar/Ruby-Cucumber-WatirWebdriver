@@ -1,5 +1,5 @@
 def run_tests(platform, browser, version, junit_dir)
-  system("platform=\"#{platform}\" browserName=\"#{browser}\" version=\"#{version}\" JUNIT_DIR=\"#{junit_dir}\" parallel_cucumber features -n 20")
+  system("platform=\"#{platform}\" browserName=\"#{browser}\" version=\"#{version}\" JUNIT_DIR=\"#{junit_dir}\" parallel_cucumber features -n 20 -o '--format AllureCucumber::Formatter'")
 end
 
 task :windows_8_1_chrome_43 do
@@ -19,11 +19,10 @@ task :windows_xp_firefox_39 do
 end
 
 multitask :test_sauce => [
-    :windows_8_1_chrome_43,
-    :windows_7_firefox_40,
-    :os_x_10_9_chrome_45,
-    :windows_xp_firefox_39
-  ] do
-    puts 'Running automation'
+  :windows_8_1_chrome_43,
+  :windows_7_firefox_40,
+  :os_x_10_9_chrome_45,
+  :windows_xp_firefox_39
+] do
+  puts 'Running automation'
 end
-

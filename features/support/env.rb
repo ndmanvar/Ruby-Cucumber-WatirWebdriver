@@ -3,6 +3,7 @@ require 'watir-webdriver'
 require 'page-object'
 require 'require_all'
 require 'sauce_whisk'
+require 'allure-cucumber'
 
 begin
   require_all "#{File.join(File.expand_path(File.dirname(__FILE__)), '..', 'page_objects')}"
