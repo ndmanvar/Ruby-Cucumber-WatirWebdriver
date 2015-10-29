@@ -36,7 +36,9 @@ After do | scenario |
   sessionid = @browser.driver.send(:bridge).session_id
   jobname = "#{scenario.feature.name} - #{scenario.name}"
 
-  puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
+  open('sauce_jenkins_output.txt', 'a') { |f|
+    f.puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
+  }
 
   @browser.close
 

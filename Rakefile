@@ -18,6 +18,10 @@ task :windows_xp_firefox_39 do
   run_tests('Windows XP', 'firefox', '39', 'junit_reports/windows_xp_firefox_39')
 end
 
+task :show_sessionid_and_job_name do
+  system("cat sauce_jenkins_output.txt")
+end
+
 multitask :test_sauce => [
   :windows_8_1_chrome_43,
   :windows_7_firefox_40,
