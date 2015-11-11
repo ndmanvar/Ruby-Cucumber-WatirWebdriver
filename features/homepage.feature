@@ -1,6 +1,6 @@
 Feature: Sauce Labs Homepage
   
-  Scenario: Verify homepage title
+  Scenario: 3
     Given I am on the Sauce Labs homepage
     Then the title of the page should be
       """
