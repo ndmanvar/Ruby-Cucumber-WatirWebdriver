@@ -10,6 +10,8 @@ install bundler: `gem install bundler  # use sudo if necessary`
 
 install gems: `bundle install  # use sudo if necessary`
 
+Ruby version 2.1.7 recommended
+
 # Running tests
 to run tests: `rake test_sauce`
 
